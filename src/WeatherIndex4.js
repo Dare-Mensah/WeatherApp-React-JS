@@ -6,12 +6,12 @@ import Navbar from './Navbar'
 
 
 
-function WeatherIndex2() {
+function WeatherIndex4() {
 
     const [weatherData, setWeatherData] = useState()
 
     useEffect(() => {
-        const API = 'https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&current_weather=true&timeformat=unixtime&timezone=Europe%2FLondon'
+        const API = 'https://api.open-meteo.com/v1/forecast?latitude=41.89&longitude=12.51&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&current_weather=true&timeformat=unixtime&timezone=auto'
         fetch(API)
         .then(res => res.json())
         .then(data => {
@@ -30,7 +30,7 @@ if(weatherData) console.log(weatherData);
         <div className='container'>
             <div className='top'>
                 <h2 className='Title'>Weather Forecast</h2>
-                <h3 className='location'>Paris</h3>
+                <h3 className='location'>Rome</h3>
                 {weatherData ? weatherData.daily.time.slice(0,5).map((day ,i) => {
                     return <DailyForecast key={i}
                         dateNum={day}
@@ -49,4 +49,4 @@ if(weatherData) console.log(weatherData);
   )
 }
 
-export default WeatherIndex2
+export default WeatherIndex4

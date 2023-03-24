@@ -14,16 +14,16 @@ function Navbar() {
                         <Link to='/WeatherIndex'>London </Link>
                     </li>
                     <li className='li'>
-                        <Link to='/'>Paris </Link>
+                        <Link to='/WeatherIndex2'>Paris </Link>
                     </li>
                     <li className='li'>
-                        <Link to='/'>New York </Link>
+                        <Link to='/WeatherIndex3'>New York </Link>
                     </li>
                     <li className='li'>
-                        <Link to='/'>Rome</Link>
+                        <Link to='/WeatherIndex4'>Rome</Link>
                     </li>
                     <li className='li'>
-                        <Link to='/'>Tokyo</Link>
+                        <Link to='/WeatherIndex5'>Tokyo</Link>
                     </li>
                 </ul>
             </nav>

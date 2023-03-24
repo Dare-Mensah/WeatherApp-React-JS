@@ -5,12 +5,14 @@ import DailyForecast from './DailyForecast'
 import Navbar from './Navbar'
 
 
+
+
 function WeatherIndex() {
 
     const [weatherData, setWeatherData] = useState()
 
     useEffect(() => {
-        const API = 'https://api.open-meteo.com/v1/forecast?latitude=51.48&longitude=-0.04&daily=temperature_2m_max,temperature_2m_min&current_weather=true&timeformat=unixtime&timezone=Europe%2FLondon'
+        const API = 'https://api.open-meteo.com/v1/forecast?latitude=51.48&longitude=-0.04&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&current_weather=true&timeformat=unixtime&timezone=Europe%2FLondon'
         fetch(API)
         .then(res => res.json())
         .then(data => {
@@ -35,6 +37,9 @@ if(weatherData) console.log(weatherData);
                         dateNum={day}
                         tempHigh={weatherData.daily.temperature_2m_max[i]}
                         tempLow={weatherData.daily.temperature_2m_min[i]}
+                        sunrise={weatherData.daily.sunrise[i]}
+                        sunset={weatherData.daily.sunset[i]}
+                        UV={weatherData.daily.uv_index_max[i]}
                     /> 
                 })
                 : <h2>Loading</h2>
