@@ -31,7 +31,7 @@ if(weatherData) console.log(weatherData);
             <div className='top'>
                 <h2 className='Title'>Weather Forecast</h2>
                 <h3 className='location'>New York</h3>
-                {weatherData ? weatherData.daily.time.slice(0,5).map((day ,i) => {
+                {weatherData ? weatherData.daily.time.slice(0,3).map((day ,i) => {
                     return <DailyForecast key={i}
                         dateNum={day}
                         tempHigh={weatherData.daily.temperature_2m_max[i]}

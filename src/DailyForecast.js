@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect}from "react";
 
 import Sunrise from './assets/sunrise-alt.png'
 import Sunset from './assets/sunset.png'
@@ -9,10 +9,10 @@ import UVIndex from './assets/sun.png'
 
 function DailyForecast({dateNum, tempHigh, tempLow, sunrise, sunset, UV}) {
 
-    dateNum =new Date(dateNum *1000)
+    dateNum =new Date(dateNum*1000)
 
-    sunrise= new Date(sunrise*1000).toLocaleTimeString()
-    sunset= new Date(sunset*1000).toLocaleTimeString()
+    sunrise= new Date((sunrise)*1000).toLocaleTimeString()
+    sunset= new Date((sunset)*1000).toLocaleTimeString()
 
     //console.log(dateNum)
 
@@ -29,13 +29,12 @@ function DailyForecast({dateNum, tempHigh, tempLow, sunrise, sunset, UV}) {
     
 
 
-
   return (
         <div className='top'>
             <div className='DailyInfo'>
-                <h3>{dateNum}</h3>
-                <h3>TempHigh: {tempHigh}°C</h3>
-                <h3>TempLow: {tempLow}°C</h3>
+                <h3 className="DailyHeader">{dateNum}</h3>
+                <h3>Max: {tempHigh}°C</h3>
+                <h3>Min: {tempLow}°C</h3>
             </div>
         <div className="extrainfo1">
                 <div className="Sunrise">
@@ -61,9 +60,7 @@ function DailyForecast({dateNum, tempHigh, tempLow, sunrise, sunset, UV}) {
                 </div>
         </div>
         
-
         </div>
-
   )
 }
 

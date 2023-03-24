@@ -46,9 +46,25 @@ function Weather1 () {
     };
   
 
+    const [backgroundImage, setBackgroundImage] = useState('');
+
+    useEffect(() => {
+        if (data.sys) {
+          const sunrise = data.sys.sunrise;
+          const sunset = data.sys.sunset;
+          const current = data.dt;
+          if (current >= sunrise && current < sunset) {
+            setBackgroundImage(require('./assets/The-Cliffsg-4-dragged.jpg'));
+          } else {
+            setBackgroundImage(require('./assets/The-Cliffsa-2-dragged.jpg'));
+          }
+        }
+      }, [data]);
 
 
   return (
+    <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover'}}>
+
     <div className="app">
     <div className="Background"></div>
     <div className="Search">
@@ -83,7 +99,7 @@ function Weather1 () {
                 <img src={Sunrise} alt="SunriseImage" style={{width:'50px', height: '50px'}}></img>
             </div>
                 <p>Sunrise</p>
-                {data.sys ? <p>{new Date(data.sys.sunrise*1000).toLocaleTimeString()}</p> : <p>00:00:00</p>}
+                {data.sys ? <p>{new Date((data.sys.sunrise+data.timezone)*1000).toLocaleTimeString()}</p> : <p>-</p>}
             </div>
         </div>
         <div className="info">
@@ -92,7 +108,7 @@ function Weather1 () {
                 <img src={Sunset} alt="SunsetImage" style={{width:'50px', height: '50px'}}></img>
             </div>
                 <p>Sunset</p>
-                {data.sys ? <p>{new Date(data.sys.sunset*1000).toLocaleTimeString()}</p> : <p>00:00:00</p>}
+                {data.sys ? <p>{new Date((data.sys.sunset+data.timezone)*1000).toLocaleTimeString()}</p> : <p>00:00:00</p>}
             </div>
         </div>
 
@@ -156,12 +172,11 @@ function Weather1 () {
                 <button 
                 onClick={addWeather}>
                     <p>Add Location</p>
-
                 </button>
                 ) : (
                 <>
                 <Weather2/>
-                <button className="Button" onClick={removeWeather}>
+                <button  onClick={removeWeather}>
                     <p>Remove Location</p>
                 </button>
                 </>
@@ -173,7 +188,7 @@ function Weather1 () {
   </div>
 
   
-
+</div>
   
   )
 }
