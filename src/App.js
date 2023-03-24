@@ -3,8 +3,8 @@ import axios from "axios"
 import Weather1 from "./Weather1";
 import Weather2 from "./Weather2";
 
-import Plus from './assets/map-marker-plus.png'
-import Minus from './assets/map-marker-minus.png'
+import WeatherIndex from "./WeatherIndex";
+import Navbar from "./Navbar";
 
 
 
@@ -13,7 +13,8 @@ function App() {
 
 
   return (
-    <div className="Background">
+    <div className="app">
+      <Navbar/> 
       <Weather1/>
 
     </div>

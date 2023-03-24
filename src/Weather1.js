@@ -20,7 +20,7 @@ function Weather1 () {
     const [data,setData] =useState({})
     const [cityName, setLocation] =useState('')
 
-    const API_KEYS = '4e2fec0f64e24a04a3964b04ba319b3a';
+    const API_KEYS = '6a2dbc7a83cbc824c715fad97a9dcaed';
 
     const url =`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEYS}&units=metric`
 
@@ -153,7 +153,8 @@ function Weather1 () {
         <div className="container1">
             <div className="Button">
                 {weatherCount === 1 ? (
-                <button onClick={addWeather}>
+                <button 
+                onClick={addWeather}>
                     <p>Add Location</p>
 
                 </button>
@@ -167,7 +168,8 @@ function Weather1 () {
                 )}
             </div>
         </div>
-    
+
+   
   </div>
 
   

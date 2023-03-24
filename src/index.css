@@ -5,6 +5,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Montserrat';
 }
 
 
@@ -93,6 +94,10 @@ p{
   text-align: center;
 }
 
+.Margin{
+  margin-top: 10%;
+}
+
 
 .app .extrainfo{
   justify-content: space-evenly;
@@ -171,3 +176,64 @@ text-align: center;
 margin-top: 10%;
 
 }
+
+.location{
+  text-align: center;
+  font-size: 50px;
+  margin-top: 5%;
+}
+
+.Title{
+  text-align: center;
+  font-size: 60px;
+
+}
+
+.DailyInfo{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+} 
+
+
+.body1{
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.473);
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ul{
+  display: flex;
+  margin: 30px;
+
+  
+}
+.item{
+  display: flex;
+  margin-left: 10;
+  
+
+}
+.li{
+  margin: 0  1rem ;
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  text-decoration: none;
+  font-weight: bolder;
+  
+}
+a{
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+
+
+
+
+
