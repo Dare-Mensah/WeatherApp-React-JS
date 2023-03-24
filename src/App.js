@@ -14,6 +14,7 @@ function App() {
 
   return (
     <div className="app">
+    {/**Renders the home screen and the navigation bar on top */}
       <Navbar/> 
       <Weather1/>
 

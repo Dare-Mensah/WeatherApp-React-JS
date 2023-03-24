@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+//impoting the dependencies needed for routing
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
+
+//Imporing all the screens used
 import Weather1 from './Weather1';
 import WeatherIndex from './WeatherIndex';
 import WeatherIndex2 from './WetaherIndex2';
@@ -13,6 +17,7 @@ import WeatherIndex5 from './WeatherIndex5';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  /* Route takes a path and element and uses the list created in Navbar.js to allow for the user to switcch between multiple screees.*/
     <Router>
       <Routes>
         <Route path='/' element={<App/>}/>

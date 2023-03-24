@@ -1,5 +1,5 @@
 import React, {useState, useEffect}from "react";
-
+/** Importing the images used  */
 import Sunrise from './assets/sunrise-alt.png'
 import Sunset from './assets/sunset.png'
 import Wind from './assets/wind.png'
@@ -16,12 +16,13 @@ function DailyForecast({dateNum, tempHigh, tempLow, sunrise, sunset, UV}) {
 
     //console.log(dateNum)
 
-    dateNum.getDay()
+    dateNum.getDay() //uses the information passed from dateNum to get the day of th week
 
     let options ={weekday:'short'}
 
-    dateNum = Intl.DateTimeFormat('en-US', options).format(dateNum)
+    dateNum = Intl.DateTimeFormat('en-US', options).format(dateNum) // formatting the time from unix timestamp
 
+ //rounding  the high and low temperatures and UV Index
     tempHigh = Math.round(tempHigh)
     tempLow = Math.round(tempLow)
 
@@ -31,12 +32,14 @@ function DailyForecast({dateNum, tempHigh, tempLow, sunrise, sunset, UV}) {
 
   return (
         <div className='top'>
+        {/**Shows the date, max and low temperatuer of the day */}
             <div className='DailyInfo'>
                 <h3 className="DailyHeader">{dateNum}</h3>
                 <h3>Max: {tempHigh}°C</h3>
                 <h3>Min: {tempLow}°C</h3>
             </div>
         <div className="extrainfo1">
+        {/**Shows the  sunrise and sunset times and also the UV index */}
                 <div className="Sunrise">
                     <div className="extraInfoImg">
                         <img src={Sunrise} alt="SunriseImage" style={{width:'50px', height: '50px'}}></img>
